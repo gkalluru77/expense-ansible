@@ -4,9 +4,10 @@
     - name: Installing nginx
       ansible.builtin.dnf:
         state: present
-    - name: Copying expense config file
-      src: expense.conf
-      dest: /etc/nginx/default.d/expense.conf
+    - name: copying expense config file
+      ansible.builtin.copy:
+       src: expense.conf
+       dest: /etc/nginx/default.d/expense.conf
     - name: clean ols nginx dir
       ansible.builtin.file:
         path: /usr/share/nginx/html/
