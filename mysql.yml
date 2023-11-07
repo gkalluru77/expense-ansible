@@ -12,7 +12,7 @@
       ansible.builtin.dnf:
         name: mysql-community-server
         state: present
-    - name: start My sql server
+    - name: start My sql service
       ansible.builtin.systemd:
         name: mysqld
         state: restarted
