@@ -3,7 +3,7 @@ Description = Backend Service
 
 [Service]
 User=expense
-Environment=DB_HOST="mysql-dev.gdevops.online"
+Environment=DB_HOST="mysql-{{env}}.gdevops.online"
 ExecStart=/bin/node /app/index.js
 SyslogIdentifier=backend
 
