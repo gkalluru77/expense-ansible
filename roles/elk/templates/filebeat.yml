@@ -1,3 +1,5 @@
+###################### Filebeat Configuration Example #########################
+
 # This file is an example configuration file highlighting only the most common
 # options. The filebeat.reference.yml file from the same directory contains all the
 # supported options with more comments. You can use it as a reference.
@@ -49,6 +51,7 @@ filebeat.inputs:
     # to add additional information to the crawled log files for filtering
     fields:
       component: {{ component }}
+
 
 # ============================== Filebeat modules ==============================
 
@@ -133,19 +136,19 @@ setup.kibana:
 
 # ---------------------------- Elasticsearch Output ----------------------------
 #output.elasticsearch:
-  # Array of hosts to connect to.
-  #hosts: ["localhost:9200"]
+#  # Array of hosts to connect to.
+#  hosts: ["localhost:9200"]
 
-  # Protocol - either `http` (default) or `https`.
-  #protocol: "https"
+# Protocol - either `http` (default) or `https`.
+#protocol: "https"
 
-  # Authentication credentials - either API key or username/password.
-  #api_key: "id:api_key"
-  #username: "elastic"
-  #password: "changeme"
+# Authentication credentials - either API key or username/password.
+#api_key: "id:api_key"
+#username: "elastic"
+#password: "changeme"
 
-  # ------------------------------ Logstash Output -------------------------------
-  output.logstash:
+# ------------------------------ Logstash Output -------------------------------
+output.logstash:
   # The Logstash hosts
   hosts: ["172.31.92.121:5044"]
 
