@@ -17,9 +17,6 @@
     src: alertmanager.yml
     dest: /opt/alertmanager/alertmanager.yml
 
-- name: Restart alertmanager
-  ansible.builtin.systemd:
-    name: alertmanager
-    state: restarted
-    enabled: yes
+- name: Reload AlertManager
+  ansible.builtin.shell: kill -1 $(ps -ef | grep /opt/alertmanager/alertmanager | grep -v grep  | awk '{print $2}')
 
