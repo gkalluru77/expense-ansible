@@ -55,5 +55,17 @@ groups:
           env: {{ env }}
         annotations:
           summary: Critical | Frontend Nginx Service Down
+      - alert: NetworkBWMonitorWait Q
+        expr: rate(node_ethtool_bw_in_allowance_exceeded[1m]) > 0
+        for: 3m
+        labels:
+          severity: critical
+          component: { { component } }
+          env: { { env } }
+        annotations:
+          summary: Critical | Network wait Q is high
+
+
+
           ##### ####
           ######
