@@ -65,7 +65,15 @@ groups:
         annotations:
           summary: Critical | Network wait Q is high
 
-
+      - alert: Nginix Service Monitor
+        expr: node_systemd_unit_state{exported_name="nginx.service",state="active"}
+        for: 1m
+        labels:
+          severity: critical
+          component: { { component } }
+          env: { { env } }
+          annotations:
+            summary: Critical | Frontend Nginx service down
 
           ##### ####
           ######
